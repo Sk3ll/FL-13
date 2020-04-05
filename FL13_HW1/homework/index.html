@@ -152,14 +152,18 @@
                     HTML is the standard markup language to create Web pages.
                 </dd>
             </dl>
-            <dt>CSS</dt>
-            <dd>
-                CSS describes how HTML elements are to be displayed.
-            </dd>
-            <dt>JavaScript</dt>
-            <dd>
-                JavaScript is a scripting languages, primarily used on the Web.
-            </dd>
+            <dl>
+                <dt>CSS</dt>
+                <dd>
+                    CSS describes how HTML elements are to be displayed.
+                </dd>
+            </dl>
+            <dl>
+                <dt>JavaScript</dt>
+                <dd>
+                    JavaScript is a scripting languages, primarily used on the Web.
+                </dd>
+            </dl>
             
             <hr>
             <section id="textform">
@@ -203,13 +207,13 @@
           <section id="registration" >
             <form action="rigt">
                 <fieldset>
-                    <label for="name">Name</label>
-                    <input type="name" id="Name" name="name"><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email"><br>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password"><br>
-                </fieldset>
+                    <label id="name">Name:</label>
+                    <input type="text" name="name"><br>
+                    <label id="email">Email:</label>
+                    <input type="email" name="email"><br>
+                    <label id="password">Password:</label>
+                    <input type="password" name="password"><br>
+                
               <label for="prog-language">Select Programming Language
                 <select name="prog-language" id="prog-language">
                   <option value="js">JavaScript</option>
@@ -219,6 +223,7 @@
               </label><br>
               <textarea name="sub" id="sub" cols="23" rows="4"></textarea><br>
               <button>Submit</button>
+            </fieldset>
             </form>
           </section>
           
