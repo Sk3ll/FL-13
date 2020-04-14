@@ -26,29 +26,26 @@ header {
   content: '';
   border: 23px solid #ff4e33;
   border-left-width: 263px;
-  transform: translateX(0px) translateY(-98px);
+  transform: translateX(0px) translateY(-74px);
   z-index: 1; }
 
 .header_heading {
-  height: 113px;
+  height: 89px;
   margin-top: 65px;
   max-width: 600px;
   position: relative;
   letter-spacing: -1.5px; }
 
 p.header_text {
-  padding-right: 600px;
   line-height: 1.5;
-  max-width: 550px;
   margin-bottom: 56px;
-  font-family: "Fresca", sans-serif; }
+  font-family: "Fresca", sans-serif;
+  white-space: pre-line; }
 
 p.header_heading {
   font-size: 70px;
-  font-family: 'Hind', sans-serif;
-  font-weight: bold;
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.95;
   z-index: 2; }
 
 .landing-logo {
@@ -100,10 +97,10 @@ a.login {
   position: absolute;
   z-index: -1;
   content: '';
-  border: 21px solid #ff4e33;
-  border-left-width: 85px;
-  width: 75px;
-  transform: translateX(206px) translateY(0px); }
+  border: 23px solid #ff4e33;
+  border-left-width: 83px;
+  width: 74px;
+  transform: translateX(206px) translateY(-7px); }
 
 .section_card_wrap {
   margin: 0px 285px 0px 300px; }
@@ -130,12 +127,16 @@ a.login {
       .section_card_wrap .section_card div.section_card_right_container p {
         font-weight: 200;
         text-align: center;
-        color: #f2f3f7; }
+        color: #ffffff; }
       .section_card_wrap .section_card div.section_card_right_container .section_card_heading {
         height: 20px;
         max-width: 400px;
         font-size: 23px;
-        margin-top: 14px; }
+        margin-top: 14px;
+        color: #ffff;
+        font-weight: 500; }
+      .section_card_wrap .section_card div.section_card_right_container p.section_card_heading {
+        color: #f2f3f7; }
       .section_card_wrap .section_card div.section_card_right_container .section_card_text {
         text-align: justify;
         height: 88px;
