@@ -1,0 +1,221 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+i {
+    font-family: fontawesome !important;
+    }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    list-style: none;
+    background-color: #ffffff;
+}
+
+.sidebar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.head-text{
+    font-size: 17px;
+    margin: 27px 0 27px 0;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    word-spacing: 2px;
+}
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 12px; 
+    padding: 0 40px 0 40px;
+
+  }
+
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 0em 0px 3em;
+    color: #000;
+    font-size: 14px;
+  }
+  
+  .navigation a:hover {
+      color: #bfba55
+      ;
+  }
+  @media all and (max-width: 900px) {
+    .navigation {
+      justify-content: space-around;
+    }
+  }
+  
+  
+
+.home{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/home-bg.jpg")  no-repeat ;
+    width: 100%;
+    height: 712px;
+    background-size: cover;
+}
+@media all and (max-width: 900px) { 
+    .home{
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.home-wrap {
+    display: grid;
+    grid-template-rows: 0.25fr 12px 103px;;
+    grid-gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.home-heading{
+    font-size: 56px;
+    margin-bottom: 0px;
+    color: #ffff;
+    margin-top: 291px;
+    grid-column: 4 / -1;
+    text-align: center;
+    
+}
+.home-text{
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.35px;
+    color: #bfba55;
+    grid-column: 2 
+}
+.home-btn{
+    width: 140px;
+    grid-column: 2;
+    height: 40px;
+    border-radius: 25px;
+    font-size: 9px;
+    letter-spacing: 1.7px;
+    font-family: 'Merriweather', serif;
+    margin-top: -5px;
+    text-transform: uppercase;
+}
+
+.container ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    padding: 5% 11px 5% 11px;
+    list-style: none;
+}
+.container ul li{
+    margin: 5px;
+    padding: 10px;
+    flex: 0 0.5 60%;
+}
+
+@media all and (max-width: 900px) { 
+    .container ul li{
+        flex: 0 0.5 90%;
+    }
+}
+
+.gallery-img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.post-heading{
+    font-size: 23.6px;
+    margin: 30px 0px 11px;
+}
+.gallery-about{
+    display: grid;
+    grid-template-columns: 38px 72px 86px 120px;
+    grid-template-rows: 38px;
+    grid-column-gap: 6px;
+}
+.author-image {
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+}
+.author-name, .post-date, .post-comments {
+    font-size: 13px;
+    margin: 10px 0px 0px 0px
+}
+.post-text{
+    margin: 20px 0 31px 0px;
+    letter-spacing: 0.2px;
+    font-size: 13px;
+    word-spacing: -0.89px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+.post-btn{
+    width: 170px;
+    height: 42px;
+    border-radius: 25px;
+    letter-spacing: 1.5px;
+}
+
+hr{
+    margin: 6.7% 0px 5.5% 0px;
+}
+
+
+
+.footer-wrap{
+    background: #000;
+    display: grid;
+    grid-template-columns: 20.5% 27% 9.4% 21% 20%;
+    grid-template-rows: 69% 78px;
+    
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+}
+
+
+.footer-about {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.footer-contact {
+    grid-area: 1 / 4 / 2 / 5;
+}
+.footer p {
+    color: gray;
+}
+.footer-heading, .contact-heading{
+    color: #ffffff;
+    margin: 86px 0px 10px 0px;
+    letter-spacing: -0.50px;
+}
+.contact-heading{
+    letter-spacing: 0.02px;
+}
+.footer-text{
+    margin: 12px 0 0 0;
+    max-width: 420px;
+    line-height: 1.8;
+    font-size: 13px;
+}
+.footer-contact .footer-text{
+    line-height: 2.6;
+    margin: -5px 0 0 0;
+    font-size: 12.7px;
+}
+.footer-text span{
+    display: block;
+}
+.footer-about .footer-text span{
+    margin: 19px 0 0 0;
+}
