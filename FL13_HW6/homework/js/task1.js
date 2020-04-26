@@ -6,7 +6,7 @@ let tip = Number(prompt('How much tip(%)?', ''));
 
 (function (){
     if (typeof sum === 'number' && !isNaN(sum) && sum >= 0){
-        return sum;
+        return parseInt(sum * maxPercent) / maxPercent;
     } else {
         sum = 'Invalid input data';
     }
@@ -20,10 +20,10 @@ let tip = Number(prompt('How much tip(%)?', ''));
     }
 })();
 function checking() {
-    return tip/maxPercent*sum;
+    return parseInt( (tip/maxPercent * sum) * maxPercent) / maxPercent;
 }
 function totalSum(){
-    return checking() + sum;
+    return parseInt( (checking() + sum) * maxPercent) / maxPercent;
 }
 
 if (sum === 'Invalid input data' || tip === 'Invalid input data'){
