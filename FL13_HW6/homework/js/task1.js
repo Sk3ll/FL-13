@@ -20,7 +20,7 @@ let tip = Number(prompt('How much tip(%)?', ''));
     }
 })();
 function checking() {
-    return parseInt( (tip/maxPercent * sum) * maxPercent) / maxPercent;
+    return parseInt( tip/maxPercent * sum * maxPercent) / maxPercent;
 }
 function totalSum(){
     return parseInt( (checking() + sum) * maxPercent) / maxPercent;
