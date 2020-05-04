@@ -17,9 +17,9 @@ function convert(){
 //convert('1', 2, 3, '4'); // [1, '2', '3', 4]
 
 function executeforEach(arr, operation){
-    arr.forEach(el => {
-        operation(el) ;
-    });
+    for(let i = 0; i< arr.length; i++){
+        operation(arr[i]);
+    }
 }
 
 //executeforEach([1,2,3], function(el) {console.log(el * 2)}) // 2 4 6
@@ -126,11 +126,7 @@ function getPastDay(date, minusDays){
         date.getFullYear(), 
         date.getMonth(), 
         date.getDate() - minusDays)
-    console.log(
-        pastDay.getDate()+', ('+
-        pastDay.getDate()+' '+Number(pastDay.getMonth()+1)+
-        ' '+pastDay.getFullYear()+')'
-    );
+    console.log(pastDay.getDate());
 }
 
 // const date = new Date(2020, 0, 2);
