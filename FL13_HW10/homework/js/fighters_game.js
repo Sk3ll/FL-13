@@ -13,20 +13,25 @@ function Fighter({name, damage, hp, strength, agility}){
     this.minProbability = 0
 
     this.getName = () => {
- return this.name = name; 
+        this.name = name;
+        return this.name 
 }
     this.getDamage = () => {
- return this.damage = damage; 
-}
+        this.damage = damage;
+        return this.damage
+    }
     this.getStrength = () => {
- return this.strength = strength; 
-}
+        this.strength = strength;
+        return this.strength;
+    }
     this.getAgility = () => {
- return this.agility = agility; 
-}
+        this.agility = agility;
+        return this.agility; 
+    }
     this.getHealth = () => {
- return this.hp = hp; 
-}
+        this.hp = hp;
+        return this.hp;
+    }
     
     this.attack = (Fighter) => {
         let probability = this.maxProbability - (this.getStrength() + this.getAgility())
