@@ -41,10 +41,32 @@ ul {
     display: inline;
 }
 
-
-
 #root{
     box-shadow: 0 0 8px #a7a7a7;
     width: 30%;
     border-radius: 5px;
+}
+
+.right-click-menu {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    list-style: none;
+    background: #f7f7f7;
+    border-radius: 3px;
+    display: none;
+    box-shadow: 0 0 8px #a7a7a7;
+}
+.right-click-menu.active {
+    display: block;
+}
+.right-click-menu li {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+}
+.right-click-menu li:hover {
+    background: #dddddd;
 }
