@@ -1,0 +1,50 @@
+body{
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0 10px 0 40px;
+} 
+
+.material-icons{
+    color: #edbc0b;
+}
+#file{
+    color: #b0b0b0;
+
+}
+
+.text{
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+}
+.text-null{
+    font-size: 14px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+}
+.text:hover{
+    background-color: #e3e3e3;
+}
+
+.material-icons {
+    display: inline;
+}
+
+
+
+#root{
+    box-shadow: 0 0 8px #a7a7a7;
+    width: 30%;
+    border-radius: 5px;
+}
