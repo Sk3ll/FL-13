@@ -66,7 +66,6 @@ function listBook() {
 
     for (let i = 0; i < localStorage.length; i++) {
         if (localStorage.getItem(i) === null) {
-            //location.href = location.path
             return;
         } else {
             const li = document.createElement('li');
@@ -173,7 +172,11 @@ function changeEdit() {
     let ID = 4;
     let content;
     if (location.hash === '#edit') {
-        content = JSON.parse(localStorage.getItem(location.search.slice(ID)));
+        if (JSON.parse(localStorage.getItem(location.search.slice(ID)))) {
+            content = JSON.parse(localStorage.getItem(location.search.slice(ID)));
+        } else {
+            return;
+        }
         if (content === undefined) {
             return;
         }
@@ -207,6 +210,7 @@ function changeEdit() {
         })
 
         root.append(editing);
+
     }
 }
 
@@ -228,7 +232,7 @@ function addBlock() {
 
 
     if (location.hash === '#add') {
-
+        location.href = '/index.html#add';
         add.className = 'edit';
         add.insertAdjacentHTML('beforeend', `
             <input class="input-img" name="img" required="required" placeholder="Link img"></input><br>
@@ -261,11 +265,6 @@ function addBlock() {
 
 }
 
-window.addEventListener('hashchange', () => {
-    if (location.hash === '#add') {
-        location.search = '';
-    }
-}, false)
 window.onhashchange = () => {
     location.reload()
 }
@@ -274,3 +273,23 @@ addBlock()
 changeEdit();
 changePreview()
 createFooter();
+
+function errorList() {
+    if (location.hash !== '#add' && location.hash !== '#preview' && location.hash !== '#edit' && location.hash !== '') {
+        location.href = '/index.html';
+    }
+    let x = 1;
+    for (let i = 0; i < localStorage.length; i++) {
+        let ID = 4;
+        if (Number(location.search.slice(ID)) === i) {
+            console.log('все в порядке');
+        } else {
+            x++;
+        }
+        if (x > localStorage.length) {
+            location.href = '/index.html';
+        }
+    }
+}
+
+errorList();
