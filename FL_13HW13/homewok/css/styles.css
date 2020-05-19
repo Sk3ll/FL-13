@@ -1,0 +1,14 @@
+.bg-orange{
+    background-color: #ff7f50!important;
+}
+.bg-orange:hover{
+    background-color: #f15722!important;
+}
+
+img{
+    width: 100%;
+}
+
+p{
+    font-size: 18px!important;
+}
