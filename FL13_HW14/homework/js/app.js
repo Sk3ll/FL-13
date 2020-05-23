@@ -1,4 +1,3 @@
-// Your code goes here
 'use strict';
 
 //============ Task_1 ============ 
@@ -7,7 +6,6 @@
 function Student(name, email) {
     const _name = Symbol('name');
     const _email = Symbol('email');
-
 
     this[_name] = name;
     this[_email] = email;
@@ -42,25 +40,76 @@ function Student(name, email) {
 
 
 function FrontendLab(students, failedLimit) {
-    this._studentsList = students;
-    this._failedHomeworksLimit = failedLimit;
-    this._homeworkResult = [];
+    const _studentsList = Symbol('studentsList');
+    const _failedHomeworksLimit = Symbol('failedHomeworksLimit');
 
-    this.addHomeworkResult = (homeworkResults)=> {
-        this._homeworkResult.push(homeworkResults);
-        //console.log(this._homeworkResult[0].results)
+    this[_studentsList] = students;
+    this[_failedHomeworksLimit] = failedLimit;
+    let arr2 = []
+    let arr3 = []
+    this.addHomeworkResult = (homeworkResults) => {
+
+        let subject;
+        let arr = [];
+
+        for (let i = 0; i < homeworkResults.results.length; i++) {
+            subject = {
+                'email': homeworkResults.results[i].email,
+                'topic': homeworkResults.topic,
+                'success': homeworkResults.results[i].success
+            }
+            arr.push(subject)
+
+        }
+        arr2.push(arr)
+
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                if (arr2[i + 1] !== undefined) {
+                    arr3[j] = [arr2[i][j], arr2[i + 1][j]];
+                }
+            }
+
+        }
+
     }
 
     this.printStudentsList = () => {
-        for (let i = 0; i < this._failedHomeworksLimit; i++){
-            console.log(` Name: ${this._studentsList[i].name} Email: ${this._studentsList[i].email}`);
-            console.log([this._homeworkResult[i].topic, this._homeworkResult[i]])
+        for (let i = 0; i < this[_studentsList].length; i++) {
+            console.log(` Name: ${this[_studentsList][i].name} Email: ${this[_studentsList][i].email}`);
+            console.log(arr3[i])
+            //console.log([arr2[0][i], arr2[1][i]])
         }
-        
+
     }
+    this.printStudentsEligibleForTest = () => {
+        let failedArr = []
+        for (let i = 0; i < this[_studentsList].length; i++) {
+            failedArr.push(0);
+        }
+
+
+        for (let i = 0; i < arr3.length; i++) {
+            for (let j = 0; j < arr3[i].length; j++) {
+                if (arr3[i][j].success === false) {
+                    failedArr[i]++;
+                }
+
+            }
+        }
+        for (let i = 0; i < this[_studentsList].length; i++) {
+            if (failedArr[i] < this[_failedHomeworksLimit]) {
+                console.log(` Name: ${this[_studentsList][i].name} Email: ${this[_studentsList][i].email}`)
+            }
+        }
+    }
+
 }
 
-let lab = new FrontendLab(listOfStudents, 2);
-lab.addHomeworkResult(homeworkResults[0])
-lab.addHomeworkResult(homeworkResults[1])
-lab.printStudentsList()
+// let lab = new FrontendLab(listOfStudents, 1);
+// lab.addHomeworkResult(homeworkResults[0])
+// lab.addHomeworkResult(homeworkResults[1])
+// //lab.addHomeworkResult(homeworkResults[2])
+// // lab.addHomeworkResult(homeworkResults[3])
+// lab.printStudentsList()
+// lab.printStudentsEligibleForTest()
