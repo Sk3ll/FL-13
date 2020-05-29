@@ -1,0 +1,33 @@
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+p {
+    margin: 0;
+}
+input {
+    border-radius: 0;
+}
+
+#container_UserList {
+    max-width: 420px;
+}
+
+.list-users {
+    padding: 0;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px
+}
+
+.container_input-addBtn, .li_update {
+    border-radius: 0px;
+    border: 0.1px solid grey;
+    height: 19px
+}
