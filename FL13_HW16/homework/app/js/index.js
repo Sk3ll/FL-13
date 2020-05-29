@@ -1,5 +1,7 @@
 'use strict';
 
+const statusErrors = 400;
+
 const baseUrl = 'http://localhost:3000';
 const appContainer = document.getElementById('app-container');
 const userList = document.getElementById('container_UserList');
@@ -13,8 +15,8 @@ function render(list) {
     const ul = document.createElement('ul');
     ul.className = 'list-users';
 
-    for ( let i = 0 ; i < list.length ; i++ ){
-        
+    for (let i = 0; i < list.length; i++) {
+
         const li = document.createElement('li');
         li.innerHTML = `
             <p>${list[i].id}</p>
@@ -41,16 +43,16 @@ function render(list) {
         deleteBtn.className = 'li_update';
         deleteBtn.appendChild(textDlt);
         formDiv.append(deleteBtn);
-        
-        li.append(formDiv)
-        
-        li.addEventListener('click', (event)=> {
 
-            if ( event.target ===  deleteBtn ) {
+        li.append(formDiv)
+
+        li.addEventListener('click', (event) => {
+
+            if (event.target === deleteBtn) {
                 dlt(list[i].id)
             }
 
-            if ( event.target ===  updeBtn ) {
+            if (event.target === updeBtn) {
                 upd(list[i].id, inputName.value, inputUsername.value)
             }
         })
@@ -61,41 +63,41 @@ function render(list) {
 }
 
 function sendRequest(method, url, body = null) {
-    return new Promise( ( resolve, reject ) => {
+    return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
-        xhr.open( method, url );
+        xhr.open(method, url);
 
         xhr.responseType = 'json';
-        
-        if ( body !== null ) {
+
+        if (body !== null) {
             xhr.setRequestHeader('Content-Type', 'application/json');
         }
-        
+
         xhr.setRequestHeader('Authorization', 'admin')
-        
+
 
         xhr.onload = () => {
             loading.style = 'display: none'
-            if ( xhr.status >= 400 ){
-                reject( xhr.response );
+            if (xhr.status >= statusErrors) {
+                reject(xhr.response);
             } else {
-                resolve( xhr.response );
+                resolve(xhr.response);
             }
         }
 
         xhr.onerror = () => {
-            reject( xhr.response );
+            reject(xhr.response);
         }
 
-        xhr.send( JSON.stringify(body) );
-    } )
+        xhr.send(JSON.stringify(body));
+    })
 }
 
 function dlt(id) {
-    sendRequest( 'DELETE', `${baseUrl}/users/${id}`)
-    .then( data => console.log(data) )
-    .catch( err => console.log(err) )
+    sendRequest('DELETE', `${baseUrl}/users/${id}`)
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     location.reload();
 }
 
@@ -104,26 +106,23 @@ function upd(id, name, username) {
         name,
         username
     }
-    sendRequest( 'PUT', `${baseUrl}/users/${id}`, body)
-    .then( data => console.log(data) )
-    .catch( err => console.log(err) )
+    sendRequest('PUT', `${baseUrl}/users/${id}`, body)
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     location.reload();
 }
 
-sendRequest( 'GET', baseUrl + '/users')
-    .then( data => render(data) )
-    .catch( err => console.log(err) )
+sendRequest('GET', baseUrl + '/users')
+    .then(data => render(data))
+    .catch(err => console.log(err))
 
 addBtn.onclick = () => {
     const body = {
         name: addName.value,
         username: addUsername.value
     }
-    sendRequest( 'POST', baseUrl + '/users', body )
-    .then( data => console.log(data) )
-    .catch( err => console.log(err) )
+    sendRequest('POST', baseUrl + '/users', body)
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     location.reload();
 }
-
-
-
